@@ -1,0 +1,17 @@
+import sys
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(21,GPIO.IN)
+print "Hello"
+
+while True:
+	start=time.time()
+	while GPIO.input(21)==0:
+		start=time.time()
+	while GPIO.input(21)==1:
+		stop=time.time()
+	elapse=stop-start
+	distance=elapse*34000/2
+	print str(distance)
