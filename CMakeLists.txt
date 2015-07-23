@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(Ultrasonic)
+project(ultrasonic)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -161,3 +161,6 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+project(ultrasonic)
+add_executable(ultrasonic src/ultrasonicnode.cpp)
+target_link_libraries(ultrasonic ${catkin_LIBRARIES};wiringPi;pthread)
